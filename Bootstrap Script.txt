@@ -1,0 +1,13 @@
+#!/bin/bash
+sudo su
+yum update -y
+yum install httpd -y
+cd /var/www/html
+echo "AmazonWebservices" > index.html
+service httpd start
+chkconfig httpd on
+
+
+
+systemctl start httpd.service
+systemctl enable httpd.service
